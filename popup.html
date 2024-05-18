@@ -1,17 +1,23 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Extension Popup</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tweet Popup</title>
     <style>
-      body { width: 200px; }
-      button { margin: 20px; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+        }
+        #tweetText {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 10px;
+        }
     </style>
-  </head>
-  <body>
-    <h1>Popup</h1>
-    <button id="myButton">Click me</button>
+</head>
+<body>
+    <h1>Explation</h1>
+    <div id="tweetText">Hover over a tweet to see the text here.</div>
     <script src="popup.js"></script>
- 
-
 </body>
 </html>
