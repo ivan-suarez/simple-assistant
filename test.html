@@ -23,9 +23,17 @@
                     prompt: 'Write a short sentence about love'
                 })
             })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('response').innerText = JSON.stringify(data, null, 2);
+            .then(response => response.text())
+            .then(text => {
+                // Split the concatenated JSON objects by line breaks
+                const jsonObjects = text.split('\n').filter(line => line.trim() !== '');
+                const data = jsonObjects.map(json => JSON.parse(json));
+                
+                // Combine the responses
+                const combinedResponse = data.map(item => item.response).join('');
+                
+                document.getElementById('response').innerText = combinedResponse;
+
             })
             .catch(error => {
                 console.error('Error:', error);
