@@ -16,6 +16,7 @@ document.addEventListener('mouseover', function (event) {
       chrome.runtime.sendMessage({ tweetText: tweetText }, function (response) {
         console.log('Response from background', response);
         chrome.runtime.sendMessage({ tweetText: response.explanation });
+        tweetElement.querySelector('[lang]').innerText = tweetText+'<b>Explanation:</b> '+response.explanation;
       })
 
     }
