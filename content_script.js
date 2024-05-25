@@ -1,6 +1,7 @@
 let currentTweet = null;
 
 document.addEventListener('mouseover', function (event) {
+  if (!event.ctrlKey) return; // Check if the Control key is pressed
   let tweetElement = event.target.closest('article');
   if (tweetElement && tweetElement !== currentTweet) {
     // Update the current tweet
